@@ -14,7 +14,7 @@ public class GUIDriver extends Application {
 
 	Die d1 = new Die(6);
 	Die d2 = new Die(6);
-
+//adadfesbvgf
 	@Override
 	public void start(Stage stage) throws Exception {
 		VBox vbox = new VBox(10);
