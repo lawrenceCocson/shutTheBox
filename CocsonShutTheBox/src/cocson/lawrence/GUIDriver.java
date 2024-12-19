@@ -67,46 +67,44 @@ public class GUIDriver extends Application {
 		vbox.setAlignment(Pos.CENTER);
 
 		// code starts
-
-		boolean got = true;
+		
+		
 		btnRoll.setOnAction(e -> {
-			// change to if we are still playing
 			if (btnRoll.getStyle().equals("")) {
 				lblValue.setText(String.valueOf(d1.roll()));
 				lblValue2.setText(String.valueOf(d2.roll()));
 				btnRoll.setStyle("-fx-background-color: lightgray");
 			}
-
 		});
 
 		// Selecting Numbers
 		for (Button tileBtn : tileBtns) {
 			tileBtn.setOnAction(e -> {
-					if (tileBtn.getStyle().equals("-fx-background-color: green")) {
-						tileBtn.setStyle(" ");
-					}
+				if (tileBtn.getStyle().equals("-fx-background-color: green")) {
+					tileBtn.setStyle("");
+				}
 
-					else if (tileBtn.getStyle().equals("")) {
-						tileBtn.setStyle("-fx-background-color: green");
+				else if (tileBtn.getStyle().equals("")) {
+					tileBtn.setStyle("-fx-background-color: green");
 
-					}
-				
-				
-
+				}
 			});
 
 		}
 
 		btnLock.setOnAction(e -> {
+			int sum = 0;
+			int targetSum = d1.getValue() + d2.getValue();
 			if (btnLock.getStyle().equals("")) {
-				for (int i=0; i< tileBtns.length; i++) {
+				for (int i = 0; i < tileBtns.length; i++) {
 					if (tileBtns[i].getStyle().equals("-fx-background-color: green")) {
-						System.out.println(tileBtns[i]);
+						sum += Integer.parseInt(tileBtns[i].getText());
 					}
 				}
+				System.out.println(sum);
+				System.out.println(targetSum);
 			}
-			 
-			
+
 		});
 
 		Scene scene = new Scene(vbox, 500, 200);
