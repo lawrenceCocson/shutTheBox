@@ -36,6 +36,11 @@ public class Die {
 		return value;
 	}
 	
+	public int setValue(int v) {
+		value = v;
+		return value;
+	}
+	
 	@Override
 	public String toString() {
 		return ("Die has " + nSides + " sides\n" + "Value is " + value);

@@ -32,7 +32,7 @@ public class Tile {
 	
 	@Override
 	public String toString() {
-		return("||Value: " + number + " isUp: " + isUp + " ");
+		return("||Value: " + number + " ");
 	}
 
 }
