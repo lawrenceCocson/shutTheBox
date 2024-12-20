@@ -61,9 +61,9 @@ public class GUIDriver extends Application {
 		HBox resultBox = new HBox(2);
 
 		Label[] results = new Label[3];
-		Label lblValue = new Label(); // output of results
+		Label lblValue = new Label("Unrolled"); // output of results
 		Label space = new Label("       ");
-		Label lblValue2 = new Label();
+		Label lblValue2 = new Label("Unrolled");
 		results[0] = lblValue;
 		results[1] = space;
 		results[2] = lblValue2;
@@ -183,7 +183,7 @@ public class GUIDriver extends Application {
 				btnEnd.setStyle("-fx-background-color: lightgray");
 				message.setText("Game Over!");
 				for (Button tileBtn : tileBtns) {
-					if (tileBtn.getStyle().equals("")) {
+					if (tileBtn.getStyle().equals("") || tileBtn.getStyle().equals("-fx-background-color: green")) {
 						tileBtn.setStyle("-fx-background-color: brown");
 					}
 
